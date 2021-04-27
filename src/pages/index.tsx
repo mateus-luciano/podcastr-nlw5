@@ -27,7 +27,7 @@ type HomeProps = {
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   return (
     <div className={styles.homePage}>
-      <section className={styles.latestEpisodes}></section>
+      <section className={styles.latestEpisodes}>
         <h2>Últimos lançamentos</h2>
         <ul>
           {latestEpisodes.map(episode => {
@@ -37,7 +37,8 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   width={192} 
                   height={192} 
                   src={episode.thumbnail} 
-                  alt={episode.title} 
+                  alt={episode.title}
+                  objectFit="cover"
                 />
                 <div className={styles.episodeDetails}>
                   <a href="">{episode.title}</a>
@@ -52,6 +53,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
             );
           })}
         </ul>
+      </section>
       <section className={styles.allEpisodes}></section>
     </div>
   )
